@@ -1,0 +1,42 @@
+a, .nav-link{
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    background-color: #212529;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+a:hover, .nav-link:hover{
+    background-color: gray;
+    color: white;
+}
+
+.exercises-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 64px 32px 0 32px;
+}
+/* .profile{
+    height: 100vh;
+} */
+
+.exercise{
+    width: 400px;
+    height: 300px;
+    margin-bottom: 32px;
+}
+
+.exercise img{
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+}
+ /* @media only screen and (max-width: 750px) {
+    .profile{
+        height: 50vh;
+    }
+ } */

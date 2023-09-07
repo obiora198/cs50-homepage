@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle theme</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: RGB(248, 249, 250);
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            padding: 8px 16px;
+            background-color: #212529;
+            border-radius: 8px;
+            border: 2px solid white;
+        }
+
+        a:hover{
+            background-color: gray;
+            color: white;
+            text-decoration: none;
+        }
+        nav{
+            background-color: gray;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 16px 32px;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .content {
+            width: 420px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .light-theme-heading {
+            color: black;
+        }
+        .light-theme-text {
+            color: green;;
+        }
+        blockquote {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        button {
+            padding: 16px;
+            border-radius: 8px;
+            font-family: bold;
+            font-size:16px;
+            color: white;
+            background-color: gray;
+        }
+
+        /* dark theme styles below */
+        .dark-theme {
+            width: 420px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: black;
+        }
+        .dark-theme-heading {
+            color: white;
+        }
+        .dark-theme-text {
+            color: springgreen;
+        }
+        @media only screen and (max-width: 750px) {
+            nav{
+                flex-direction: column;
+                gap: 8px;
+            }
+            a{
+                width: 80%
+            }
+        }
+    </style>
+
+    <script>
+        function changeTheme() {
+            const content = document.querySelector(".content");
+            const heading = document.querySelector('.light-theme-heading');
+            const text = document.querySelector('.light-theme-text');
+
+            const toggleStyle = (element,style1, style2) => {
+                element.classList.toggle(style1 && style2);
+            }
+            toggleStyle(content, 'content', 'dark-theme');
+            toggleStyle(heading, 'light-theme-heading', 'dark-theme-heading');
+            toggleStyle(text, 'light-theme-text', 'dark-theme-text');
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="../index.html">homepage</a>
+        <a href="apple-homepage.html">Apple hompage</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="password-generator.html">Password generator</a>
+        <a href="css-practice.html">CSS practice</a>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h1 class="light-theme-heading">The preamble to the Nigerian Constitution</h1>
+
+            <blockquote class="light-theme-text">"We the people of the Federal Republic of Nigeria, Having firmly and solemnly resolved, to live in unity and harmony as one indivisible and indissoluble sovereign nation under God, dedicated to the promotion of inter-African solidarity, world peace, international co-operation and understanding; and to provide for a Constitution for the purpose of promoting the good government and welfare of all persons in our country, on the principles of freedom, equality and justice, and for the purpose of consolidating the unity of our people. Do hereby make, enact and give to ourselves the following Constitution"</blockquote>
+
+            <button id="switcher" onclick="changeTheme()">Click me to Change Theme</button>
+        </div>
+    </div>
+
+</body>
+</html>
